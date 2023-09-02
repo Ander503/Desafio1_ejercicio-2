@@ -1,17 +1,12 @@
 import React from "react";
 import '../css/ingreso.css'
 
-function Ingreso(props) {
+function Ingreso({nombre, pizza}) {
     return(
-      <div className='contenedor-datos-personales'>
-        <img 
-          className='imagen-pizza'
-          src=""           
-        />
+      <div className='contenedor-datos-personales'>        
         <div className='contenedor-texto'>
-        
+          <p>{nombre}, {pizza}</p>
         </div>
-
       </div>
     );
 }
