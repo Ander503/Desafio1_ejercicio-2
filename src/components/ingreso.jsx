@@ -1,6 +1,10 @@
 import React, { useState } from "react";
 import '../css/ingreso.css'
-
+import Swal from 'sweetalert2';
+import 'sweetalert2/dist/sweetalert2.css';
+/************/
+/*Instalar npm install sweetalert2*/
+/************/
 function Ingreso({ nombre, pizza, array }) {
 
   const result = array.length;
@@ -15,82 +19,98 @@ function Ingreso({ nombre, pizza, array }) {
     let ingredientesextra=0;
     let precio_regular=0;
 
-    if (pizza === "Pizza Personal") {
-      if (array.length === 0) {
-        preciofinal = 7;
-      } else if (array.length === 1) {
-        ingredientesextra= result*1;
-        preciofinal = 7 + ingredientesextra;
-
-      } else if (array.length === 2) {
-        ingredientesextra=result*0.75;
-        preciofinal = 7 + ingredientesextra;
-
-      } else if (array.length === 3) {
-        ingredientesextra=result*0.50;
-        preciofinal = 7 + ingredientesextra;
-
-      } else if (array.length >= 4) {
-        ingredientesextra=result*0.25;
-        preciofinal = 7 + ingredientesextra;
-      }
-
-      setRegular('7');
-      setExtra(ingredientesextra)
-      setFinalprice(preciofinal);
-      
-    } else if (pizza === "Pizza Mediana") {
+    if (!nombre || nombre.trim() === "") {
+      Swal.fire({
+        title: '¡Error!',
+        text: 'Por favor, ingresa tu nombre antes de comprar la pizza.',
+        icon: 'error'
+      });
+    }else{
+      if (pizza === "Pizza Personal") {
         if (array.length === 0) {
-          preciofinal = 10;
+          preciofinal = 7;
         } else if (array.length === 1) {
-          ingredientesextra=result*2;
-          preciofinal = 10 + ingredientesextra;
-
+          ingredientesextra= result*1;
+          preciofinal = 7 + ingredientesextra;
+  
         } else if (array.length === 2) {
-          ingredientesextra=result*1;
-          preciofinal = 10 + ingredientesextra;
-
-        } else if (array.length === 3) {
           ingredientesextra=result*0.75;
-          preciofinal = 10 + ingredientesextra;
-
-        } else if (array.length >= 4) {
+          preciofinal = 7 + ingredientesextra;
+  
+        } else if (array.length === 3) {
           ingredientesextra=result*0.50;
-          preciofinal = 10 + ingredientesextra;
+          preciofinal = 7 + ingredientesextra;
+  
+        } else if (array.length >= 4) {
+          ingredientesextra=result*0.25;
+          preciofinal = 7 + ingredientesextra;
         }
-
-        
-        setRegular('10');
+  
+        setRegular('7');
         setExtra(ingredientesextra)
         setFinalprice(preciofinal);
-      
-    } else if (pizza === "Pizza Grande") {
-      if (array.length === 0) {
-        preciofinal = 12;
-
-      } else if (array.length === 1) {
-        ingredientesextra=result*2.50;
-        preciofinal = 12 + ingredientesextra;
-
-      } else if (array.length === 2) {
-        ingredientesextra=result*2;
-        preciofinal = 12 + ingredientesextra;
         
-      } else if (array.length === 3) {
-        ingredientesextra=result*1;
-        preciofinal = 12 + ingredientesextra;
+      } else if (pizza === "Pizza Mediana") {
+          if (array.length === 0) {
+            preciofinal = 10;
+          } else if (array.length === 1) {
+            ingredientesextra=result*2;
+            preciofinal = 10 + ingredientesextra;
+  
+          } else if (array.length === 2) {
+            ingredientesextra=result*1;
+            preciofinal = 10 + ingredientesextra;
+  
+          } else if (array.length === 3) {
+            ingredientesextra=result*0.75;
+            preciofinal = 10 + ingredientesextra;
+  
+          } else if (array.length >= 4) {
+            ingredientesextra=result*0.50;
+            preciofinal = 10 + ingredientesextra;
+          }
+  
+          
+          setRegular('10');
+          setExtra(ingredientesextra)
+          setFinalprice(preciofinal);
+        
+      } else if (pizza === "Pizza Grande") {
+        if (array.length === 0) {
+          preciofinal = 12;
+  
+        } else if (array.length === 1) {
+          ingredientesextra=result*2.50;
+          preciofinal = 12 + ingredientesextra;
+  
+        } else if (array.length === 2) {
+          ingredientesextra=result*2;
+          preciofinal = 12 + ingredientesextra;
+          
+        } else if (array.length === 3) {
+          ingredientesextra=result*1;
+          preciofinal = 12 + ingredientesextra;
+  
+        } else if (array.length >= 4) {
+          ingredientesextra=result*0.75;
+          preciofinal = 12 + ingredientesextra;
+  
+        }
+  
+        setRegular('12');
+        setExtra(ingredientesextra)
+        setFinalprice(preciofinal);
+      } 
+      Swal.fire({
+        title: 'Compra exitosa',
+        text: `Gracias, ${nombre}! Tu pizza ha sido comprada.`,
+        icon: 'success'
+      });
+    }
+    }
 
-      } else if (array.length >= 4) {
-        ingredientesextra=result*0.75;
-        preciofinal = 12 + ingredientesextra;
 
-      }
-
-      setRegular('12');
-      setExtra(ingredientesextra)
-      setFinalprice(preciofinal);
-    } 
-  }
+    
 
   return (
     <div className='contenedor-datos-personales'>      
