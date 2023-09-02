@@ -1,38 +1,119 @@
-.App {
-  text-align: center;
+html,body{
+  background-color: #7fb893;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.App{
+  margin: 0 auto;
+  margin-top: 60px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.columna-izquierda {
+  margin-left: 50px;
+  width: 40%;
+  float: left;
+  
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.columna-derecha {
+  width: 40%;
+  margin-right: 50px;
+  float: right;
+  background-color: blue;
+}
+
+.contenedor-datos-personales {
+  width: 840px;
+  height: auto; 
+  margin: 10px 10px 30px;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  background-color: #fff;
+  box-shadow: 0 3px 13px 1px rgba(0, 0, 0, 0.09); 
+  border-radius: 15px;
+  position: relative;
+  flex-direction: column; 
 }
 
-.App-link {
-  color: #61dafb;
+.contenedor-texto {
+  display: flex;
+  flex-direction: column; 
+  align-items: center;
+  margin-top: 10px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+.nom {
+  margin-left: 132px;
+  width: 180px;
+  padding: 10px;
+  margin-bottom: 10px; 
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+
+
+.imagen-pizza{ 
+    position: absolute;
+    left: 0;  
+    height: 300px;
+    width: 300px;
+    margin-left: 20px;
+    border-radius: 15px;
+}
+
+.nom{
+  
+}
+
+
+/*Para el select de tamaños*/
+.Select{
+margin-left: 130px;
+padding: 10px; 
+  font-size: 16px; 
+  border: 1px solid #ccc; 
+  border-radius: 4px; 
+  background-color: #fff; 
+  width: 200px; 
+  cursor: pointer; 
+}
+
+.Select option {
+  padding: 10px; 
+  font-size: 16px; 
+}
+
+
+/*Para cajas ingredientes*/
+.checkbox-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px; 
+  margin-left: 30px;
+  margin-top: 5px;
+}
+
+.checkbox-container input[type="checkbox"] {
+  margin-right: 10px; 
+}
+
+
+.checkbox-container input[type="checkbox"] {    
+   width: 20px; 
+   height: 20px; 
+   background-color: #fff; 
+   border: 2px solid #ccc; 
+   border-radius: 3px; 
+   cursor: pointer; 
+  
+}
+
+
+.checkbox-container label {
+
+  color: #333; 
+  font-size: 16px;
+  
 }

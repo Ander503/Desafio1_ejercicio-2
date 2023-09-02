@@ -1,0 +1,51 @@
+.contenedor-datos-personales{
+    width: 740px;
+    height: 268px;
+    margin: 10px 10px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    box-shadow: 0 3px 13px 1px rgb(0 0 0 /9%);  
+    border-radius: 15px;
+    position: relative;
+  }
+  
+  .imagen-pizza{ 
+      position: absolute;
+      left: 0;  
+      height: 200px;
+      width: 300px;
+      margin-left: 20px;
+      border-radius: 15px;
+  }
+  
+  
+  /**/
+  .contenedor-texto{
+      text-align: center;
+      padding: 40px;
+      font-family: Lato, sans-serif;
+      font-weight: 400;
+      line-height: 1.5rem;
+  }
+  
+  .tipo-pizza{
+      font-size: 1.3rem;
+  
+  }
+  
+  .cargo-testimonio{
+      font-size: 1.3rem;
+      margin-top: 15px;
+      padding-bottom: 15px;
+  
+  }
+  
+  .texto-testimonio{
+      font-size: 1.1rem;
+      text-align: justify;
+      
+  }
+  
+  
