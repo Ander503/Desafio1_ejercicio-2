@@ -44,9 +44,10 @@ function App() {
             
               <div className='grupo-texto'>
                 
+              
                 <input className='nom' type='text' name='nombre' placeholder='Ingrese Su Nombre' onChange={(e)=>setName(e.target.value)}/>
                 <select className='Select' onChange={(e)=>setPizza(e.target.value)}> 
-                  <option disabled={true}>Elija Un tamaño de pizza</option>
+                <option disabled selected>Elija Un tamaño de pizza</option>
                   <option value='Pizza Personal'>Pizza Personal</option>
                   <option value='Pizza Mediana'>Pizza Mediana</option>
                   <option value='Pizza Grande'>Pizza Grande</option>
@@ -92,8 +93,14 @@ function App() {
         array={checkboxValues}
         
         />
-      </div>            
+      </div>
+      <footer class="footer">
+        <p>Programa hecho por:</p>
+        <p>Adilson Arian Montes Martinez MM200149</p>
+        <p>Anderson Melendez Alvarado MA20149</p>
+    </footer>            
     </div>
+    
   );
 }
 

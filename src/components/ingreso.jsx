@@ -25,6 +25,12 @@ function Ingreso({ nombre, pizza, array }) {
         text: 'Por favor, ingresa tu nombre antes de comprar la pizza.',
         icon: 'error'
       });
+    } else if (!pizza || pizza.trim() === "") {
+      Swal.fire({
+        title: '¡Error!',
+        text: 'Por favor, Elige un tamaño de pizza.',
+        icon: 'error'
+      });
     }else{
       if (pizza === "Pizza Personal") {
         if (array.length === 0) {
