@@ -24,7 +24,7 @@ html,body{
 
 .datos-personales {
   width: 760px;
-  height: 300px ; 
+  height: 340px ; 
   margin: 10px 10px 30px;
   display: flex;
   align-items: center;
@@ -60,7 +60,7 @@ html,body{
     left: 0;  
     height: 300px;
     width: 300px;
-    margin-left: 20px;
+    margin-left: 0px;
     border-radius: 15px;
 }
 

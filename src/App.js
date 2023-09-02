@@ -2,47 +2,6 @@ import { useState } from 'react';
 import './App.css';
 import Ingreso from './components/ingreso';
 
-/*function Select({pizza1, pizza2, pizza3}){
-  return (
-    
-    <select className='Select'>
-      <option disabled={true}>Elija Un tamaño de pizza</option>
-      <option value='7'>{pizza1}</option>
-      <option value='10'>{pizza2}</option>
-      <option value='12'>{pizza3}</option>
-    </select>    
-  );
-}*/
-
-function Ingredientes({ig1,ig2,ig3,ig4}){
-  return(
-    <div className='ingredientes'>      
-      <div class="checkbox-container">
-        <input type="checkbox" name='1' value={ig1} />
-        <label>{ig1}</label>
-      </div>
-
-      <div class="checkbox-container">
-        <input type="checkbox" name='2' value={ig2} />
-        <label>{ig2}</label>
-      </div>
-
-      <div class="checkbox-container">
-        <input type="checkbox" name='3' value={ig3} />
-        <label>{ig3}</label>
-      </div>
-
-      <div class="checkbox-container">
-        <input type="checkbox" name='4' value={ig4} />
-        <label>{ig4}</label>
-      </div>
-
-      
-    </div>
-  );
-}
-
-
 function App() {
 
   function HandleSubmit(e)
@@ -54,7 +13,23 @@ function App() {
   const [name, setName]=useState('');
   /*Tipo de pizza*/
   const [pizza, setPizza]=useState('');
-  /**/
+  /*Ingredientes*/
+  const [checkboxValues,setValues]=useState([]);
+
+  function handleChange(event){
+    const {value, checked}= event.target
+
+    if(checked){
+      setValues(pre=>[...pre,value])
+    }
+    else(
+      setValues(pre=>{
+        return [...pre.filter (skill => skill!==value)]
+      })
+    )
+  }
+
+  console.log(checkboxValues)
 
   return (
     <div className='App'>      
@@ -72,18 +47,39 @@ function App() {
                 <input className='nom' type='text' name='nombre' placeholder='Ingrese Su Nombre' onChange={(e)=>setName(e.target.value)}/>
                 <select className='Select' onChange={(e)=>setPizza(e.target.value)}> 
                   <option disabled={true}>Elija Un tamaño de pizza</option>
-                  <option value='7'>Pizza Personal</option>
-                  <option value='10'>Pizza Mediana</option>
-                  <option value='12'>Pizza Grande</option>
+                  <option value='Pizza Personal'>Pizza Personal</option>
+                  <option value='Pizza Mediana'>Pizza Mediana</option>
+                  <option value='Pizza Grande'>Pizza Grande</option>
                 </select>  
 
 
-                <Ingredientes ig1='Peperoni' ig2='Hongos' ig3='Jamon' ig4='Aceitunas'/>
+                <div className='ingredientes'>      
+                  <div class="checkbox-container">
+                    <input type="checkbox" name='1' value='Peperoni' onChange={handleChange} />
+                    <label>Peperoni</label>
+                  </div>
 
+                  <div class="checkbox-container">
+                    <input type="checkbox" name='2' value='Hongos' onChange={handleChange} />
+                    <label>Hongos</label>
+                  </div>
 
-                <button type='submit' className='btn_end'  > Terminar Compra </button>
+                  <div class="checkbox-container">
+                    <input type="checkbox" name='3' value='Jamon' onChange={handleChange} />
+                    <label>Jamon</label>
+                  </div>
+
+                  <div class="checkbox-container">
+                    <input type="checkbox" name='4' value='Aceitunas' onChange={handleChange} />
+                    <label>Aceitunas</label>
+                  </div>
+
+                  <div class="checkbox-container">
+                    <input type="checkbox" name='5' value='Piña' onChange={handleChange} />
+                    <label>Piña</label>
+                  </div>                  
+                </div>                
               </div>
-
             </div>                         
           </div>
         </form>
@@ -93,27 +89,12 @@ function App() {
         <Ingreso
         nombre={name}
         pizza={pizza}
+        array={checkboxValues}
+        
         />
-      </div>
-      
-      
+      </div>            
     </div>
   );
 }
 
 export default App;
-
-
-/* 
-esto es de columna derecha
-
-<div className='datos-personales'>            
-          <h4 style={{marginTop:'-240px', position:'absolute'}}>Facturacion</h4>
-                          
-              <h2>{name}</h2>
-              <h2>{pizza}</h2>
-
-              <Ingreso></Ingreso>
-            
-        </div> 
-*/
