@@ -18,12 +18,13 @@ html,body{
   width: 40%;
   margin-right: 50px;
   float: right;
-  background-color: blue;
+  display: flex;  
+  
 }
 
-.contenedor-datos-personales {
-  width: 840px;
-  height: auto; 
+.datos-personales {
+  width: 760px;
+  height: 300px ; 
   margin: 10px 10px 30px;
   display: flex;
   align-items: center;
@@ -35,7 +36,7 @@ html,body{
   flex-direction: column; 
 }
 
-.contenedor-texto {
+.grupo-texto {
   display: flex;
   flex-direction: column; 
   align-items: center;
@@ -63,9 +64,6 @@ html,body{
     border-radius: 15px;
 }
 
-.nom{
-  
-}
 
 
 /*Para el select de tamaños*/
@@ -116,4 +114,18 @@ padding: 10px;
   color: #333; 
   font-size: 16px;
   
+}
+
+.btn_end{
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #ff4d4d; 
+  color: #fff; 
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  margin-left: 90px;
 }

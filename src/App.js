@@ -54,18 +54,18 @@ function App() {
       <form onSubmit={HandleSubmit}>
         <h1 style={{textAlign:'center', }}>BIENVENIDO A LA ITALIANA</h1>        
         <div className='columna-izquierda'>
-          <div className='contenedor-datos-personales'>
+          <div className='datos-personales'>
             <img 
               className='imagen-pizza'
               src='https://cdn.pixabay.com/photo/2017/12/09/08/18/pizza-3007395_1280.jpg'                                   
             />
           
-            <div className='contenedor-texto'>
+            <div className='grupo-texto'>
               
               <input className='nom' type='text' name='nombre' placeholder='Ingrese Su Nombre' />
               <Select pizza1="Pizza Personal" pizza2="Pizza Mediana" pizza3="Pizza Grande" />            
               <Ingredientes ig1='Peperoni' ig2='Hongos' ig3='Jamon' ig4='Aceitunas'/>
-
+              <button className='btn_end'> Terminar Compra </button>
             </div>
 
           </div>                         
@@ -73,7 +73,9 @@ function App() {
       </form>
         
       <div className='columna-derecha'>
-        
+        <div className='datos-personales'>            
+          <h4 style={{marginTop:'-240px'}}>Facturacion</h4>
+        </div> 
       </div>
       
       
